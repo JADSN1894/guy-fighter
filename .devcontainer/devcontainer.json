@@ -1,0 +1,58 @@
+{
+  "build": {
+    "dockerfile": "./Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2.5.4": {
+      "username": "vscode",
+      "uid": 1000,
+      "gid": 1000,
+      "installZsh": false,
+      "installOhMyZsh": false,
+      "upgradePackages": true,
+      "nonFreePackages": false
+    },
+    "ghcr.io/devcontainers/features/github-cli:1.0.14": {
+      "version": "latest",
+      "installDirectlyFromGitHubRelease": true
+    },
+    "ghcr.io/devcontainers/features/node": {
+      "nodeGypDependencies": false,
+      "nvmVersion": "latest",
+      "version": "lts",
+      "installYarnUsingApt": false
+    }
+  },
+  "postCreateCommand": "sh .devcontainer/install_tooling.sh",
+  "runArgs": [
+    "--cap-add=SYS_PTRACE",
+    "--security-opt",
+    "seccomp=unconfined"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "lldb.executable": "/usr/bin/lldb",
+        // VS Code don't watch files under ./target
+        "files.watcherExclude": {
+          "**/target/**": true
+        },
+        "rust-analyzer.checkOnSave": true,
+        // "rust-analyzer.check.command": "clippy",
+        "explorer.compactFolders": false,
+        "rust-analyzer.inlayHints.implicitDrops.enable": true
+      },
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "rust-lang.rust-analyzer",
+        "fill-labs.dependi",
+        "BytecodeAlliance.wit-idl",
+        "tamasfe.even-better-toml",
+        "vadimcn.vscode-lldb",
+        "skellock.just",
+        "ms-vscode-remote.remote-containers"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}
