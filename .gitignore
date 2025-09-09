@@ -2,6 +2,8 @@
 wit/deps
 wit/deps.lock
 
+plugins
+
 js-plugin/build/*
 c-plugin/build/*
 c-plugin/gen/*
