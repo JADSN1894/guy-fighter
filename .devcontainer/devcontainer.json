@@ -16,10 +16,10 @@
       "version": "latest",
       "installDirectlyFromGitHubRelease": true
     },
-    "ghcr.io/devcontainers/features/node": {
+    "ghcr.io/devcontainers/features/node:1.6.3": {
       "nodeGypDependencies": false,
       "nvmVersion": "latest",
-      "version": "lts",
+      "version": "latest",
       "installYarnUsingApt": false
     }
   },

@@ -1,5 +1,7 @@
 //https://www.imagineforest.com/blog/funny-name-generator/
 
+use rand::{distr::Uniform, Rng};
+
 pub const FIRST_NAMES: [&str; 50] = [
     "Terge", "Zoowee", "Fluffy", "Buritt", "Peaberry",
     "Trashwee", "Flapberry", "Gummoo", "Humster", "Burberry",
@@ -27,7 +29,12 @@ pub const LAST_NAMES: [&str; 50] = [
 ];
 
 pub fn generate_name() -> String {
-    let first_name = FIRST_NAMES[rand::random::<usize>() % FIRST_NAMES.len()];
-    let last_name = LAST_NAMES[rand::random::<usize>() % LAST_NAMES.len()];
+
+    let mut thread_rng = rand::rng(); 
+    let random = thread_rng.sample(Uniform::new_inclusive(0, FIRST_NAMES.len()).unwrap());
+
+    let first_name = FIRST_NAMES[random];
+    let last_name = LAST_NAMES[random];
+
     format!("{} {}", first_name, last_name)
 }

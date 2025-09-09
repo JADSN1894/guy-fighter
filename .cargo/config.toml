@@ -1,0 +1,2 @@
+[env]
+WASMTIME_DEBUG_BINDGEN = "1"

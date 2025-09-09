@@ -1,3 +1,7 @@
+**/target
+wit/deps
+wit/deps.lock
+
 js-plugin/build/*
 c-plugin/build/*
 c-plugin/gen/*
