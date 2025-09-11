@@ -1,0 +1,8 @@
+[workspace]
+members = ["rust-plugin", "guy-fighter"]
+resolver = "3"
+
+[workspace.package]
+license = "MIT"
+edition = "2024"
+version = "0.1.0"

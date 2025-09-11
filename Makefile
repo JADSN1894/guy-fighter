@@ -1,6 +1,6 @@
 .PHONY: all run
 
-all: guy-fighter c-plugin js-plugin
+all: guy-fighter c-plugin js-plugin rust-plugin
 
 guy-fighter-install/bin/guy-fighter: guy-fighter/src/main.rs guy-fighter/src/game.rs guy-fighter/src/names.rs guy-fighter/src/visualization.rs wit/guy-fighter.wit
 	@mkdir -p guy-fighter-install
@@ -15,3 +15,4 @@ run: all
 
 include c-plugin/Makefile
 include js-plugin/Makefile
+include rust-plugin/Makefile
