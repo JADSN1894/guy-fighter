@@ -7,8 +7,8 @@ sudo apt-get install clang cmake libdeflate-dev musl-dev musl-tools -y
 
 rustup target add wasm32-unknown-unknown wasm32-wasip1 wasm32-wasip2
 
-# npm uninstall -g @bytecodealliance/jco @bytecodealliance/componentize-js @bytecodealliance/preview2-shim
-npm install -g @bytecodealliance/jco@1.14.0 @bytecodealliance/componentize-js@0.19.0 @bytecodealliance/preview2-shim@0.17.4
+# npm uninstall -g @bytecodealliance/jco @bytecodealliance/componentize-js @bytecodealliance/preview2-shim commander
+npm install -g @bytecodealliance/jco@1.14.0 @bytecodealliance/componentize-js@0.19.0 @bytecodealliance/preview2-shim@0.17.4 commander@14.0.0
 
 mkdir -p $HOME/.local/bin
 cd $HOME/.local/bin

@@ -1,5 +1,5 @@
 use crate::game::{ContestType, Guy, GameState, PluginId, TypeOfGuy};
-use rand::seq::{IndexedRandom, SliceRandom};
+use rand::seq::IndexedRandom;
 use unicode_width::UnicodeWidthStr;
 
 const STRENGTH_EMOJI: &str = "💪";

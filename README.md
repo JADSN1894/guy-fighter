@@ -20,7 +20,7 @@ Guy Fighter is a console application that lets you simulate fights between diffe
 
 ## Articles
 - [WebAssembly Components: Circular Dependencies and World Elaboration](https://tartanllama.xyz/posts/wasm-circular-dependencies/)
-- [Building Native Plugin Systems with WebAssembly Components](https://tartanllama.xyz/posts/wasm-plugins/)
+- [Building Native Plugin Systems with WebAssembly Components](https://tartanlmakelama.xyz/posts/wasm-plugins/)
 
 ## Overview
 

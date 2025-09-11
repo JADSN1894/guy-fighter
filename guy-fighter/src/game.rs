@@ -173,7 +173,7 @@ impl<'a> Guy<'a> {
 }
 
 fn select_random_guy_type(state: &GameState) -> TypeOfGuy {
-    let mut rng = rand::thread_rng();
+    let mut rng = rand::rng();
 
     // Get total number of guy types
     let builtin_count = state.builtin_types_of_guy.len();
@@ -195,7 +195,7 @@ fn select_random_guy_type(state: &GameState) -> TypeOfGuy {
 }
 
 fn roll_attribute_contest(attr1: u8, attr2: u8) -> (bool, u32, u32) {
-    let mut rng = rand::thread_rng();
+    let mut rng = rand::rng();
 
     loop {
         let roll1 = rng.gen_range(1..=DICE_SIDES) + attr1 as u32;
@@ -217,7 +217,7 @@ pub enum ContestType {
 const DICE_SIDES: u32 = 20;
 
 fn fight_round(guy1: &Guy, guy2: &Guy, round: u8) -> bool {
-    let mut rng = rand::thread_rng();
+    let mut rng = rand::rng();
 
     // Randomly select which attribute to contest
     let contest_type = rng.gen_range(0..3);
