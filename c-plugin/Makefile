@@ -4,9 +4,9 @@ c-plugin: c-plugin/build/c-plugin.wasm
 	@mkdir -p guy-fighter-install/plugins
 	@cp c-plugin/build/c-plugin.wasm guy-fighter-install/plugins/c-plugin.wasm
 
-c-plugin/gen/plugin.c: guy-fighter/wit/guy-fighter.wit
+c-plugin/gen/plugin.c: wit/guy-fighter.wit
 	@mkdir -p c-plugin/gen
-	wit-bindgen c guy-fighter/wit -w plugin --out-dir c-plugin/gen --autodrop-borrows=yes
+	wit-bindgen c wit -w plugin --out-dir c-plugin/gen --autodrop-borrows=yes
 
 c-plugin/build/c-plugin.wasm: c-plugin/plugin.c c-plugin/gen/plugin.c
 	@mkdir -p c-plugin/build

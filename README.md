@@ -18,6 +18,10 @@ A demonstration of a plugin system using [WASM Components](https://component-mod
 
 Guy Fighter is a console application that lets you simulate fights between different types of guys. Plugins can be written and loaded into Guy Fighter to invent entirely new types of guys to fight.
 
+## Articles
+- [WebAssembly Components: Circular Dependencies and World Elaboration](https://tartanllama.xyz/posts/wasm-circular-dependencies/)
+- [Building Native Plugin Systems with WebAssembly Components](https://tartanlmakelama.xyz/posts/wasm-plugins/)
+
 ## Overview
 
 Guy Fighter consists of four components:
