@@ -23,7 +23,19 @@
       "installYarnUsingApt": false
     }
   },
+  "remoteEnv": {
+    "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"
+  },
+  
+  // Optional: Install resources
   "postCreateCommand": "sh .devcontainer/install_tooling.sh",
+  
+  // Optional: Initialize on host (if you want to prompt for token before container build)
+  "initializeCommand": "if [ ! -f .devcontainer/.env ] || ! grep -q '^GITHUB_TOKEN=' .devcontainer/.env; then echo '⚠️  Please create .devcontainer/.env with GITHUB_TOKEN=...' && exit 1; fi",
+
+  // Optional: Show success message after startup
+  "postStartCommand": "gh auth status || echo 'gh auth failed. Run ./.devcontainer/setup-gh.sh manually.'",
+  
   "runArgs": [
     "--cap-add=SYS_PTRACE",
     "--security-opt",

@@ -1,3 +1,5 @@
+.devcontainer/.env
+
 **/target
 wit/deps
 wit/deps.lock
