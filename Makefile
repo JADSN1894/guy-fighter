@@ -16,3 +16,4 @@ run: all
 include c-plugin/Makefile
 include js-plugin/Makefile
 include rust-plugin/Makefile
+include go-plugin/Makefile

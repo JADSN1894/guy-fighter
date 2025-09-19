@@ -1,5 +1,5 @@
 .devcontainer/.env
-
+wkg.lock
 **/target
 wit/deps
 wit/deps.lock
