@@ -141,6 +141,14 @@ gh --repo $CURRENT_REPO --pattern "$DOWNLOADED_FILE" release download $CURRENT_V
 sudo dpkg -i $DOWNLOADED_FILE
 rm -f $DOWNLOADED_FILE
 
+## Install go-modules (`wit-bindgen-go`)
+CURRENT_REPO="bytecodealliance/go-modules"
+CURRENT_VERSION=$(gh --repo $CURRENT_REPO release view --json tagName --jq .tagName)
+DOWNLOADED_FILE=$(gh --repo $CURRENT_REPO release view --json assets --jq '.assets[] | select(.name | contains("linux") and contains("amd64") and endswith(".tgz")) .name')
+gh --repo $CURRENT_REPO --pattern "$DOWNLOADED_FILE" release download $CURRENT_VERSION
+tar -xvf $DOWNLOADED_FILE
+rm -f $DOWNLOADED_FILE
+
 ## Install cargo-component (`cargo-component`)
 # CURRENT_REPO="bytecodealliance/cargo-component"
 # CURRENT_VERSION=$(gh --repo $CURRENT_REPO release view --json tagName --jq .tagName)
