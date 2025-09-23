@@ -21,7 +21,8 @@
       "nvmVersion": "latest",
       "version": "latest",
       "installYarnUsingApt": false
-    }
+    },
+    "ghcr.io/devcontainers/features/go:1.3.2": {}
   },
   "remoteEnv": {
     "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"

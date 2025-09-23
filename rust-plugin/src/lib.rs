@@ -12,7 +12,7 @@ struct Component;
 
 impl Guest for Component {
     // #[allow(async_fn_in_trait)]
-    fn init() -> () {
+    fn init() -> () { 
          // Create a new guy
         let guy = TypeOfGuy {
             name: "Ferris".into(),

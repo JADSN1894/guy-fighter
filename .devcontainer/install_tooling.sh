@@ -8,7 +8,7 @@ sudo apt-get install clang cmake libdeflate-dev musl-dev musl-tools -y
 rustup target add wasm32-unknown-unknown wasm32-wasip1 wasm32-wasip2
 
 # npm uninstall -g @bytecodealliance/jco @bytecodealliance/componentize-js @bytecodealliance/preview2-shim commander
-npm install -g @bytecodealliance/jco@1.14.0 @bytecodealliance/componentize-js@0.19.0 @bytecodealliance/preview2-shim@0.17.4 commander@14.0.0
+npm install -g @bytecodealliance/jco @bytecodealliance/componentize-js @bytecodealliance/preview2-shim commander
 
 mkdir -p $HOME/.local/bin
 cd $HOME/.local/bin
@@ -123,6 +123,30 @@ CURRENT_VERSION=$(gh --repo $CURRENT_REPO release view --json tagName --jq .tagN
 DOWNLOADED_FILE=$(gh --repo $CURRENT_REPO release view --json assets --jq '.assets[] | select(.name | contains("x86_64") and contains("linux") and endswith(".deb")) .name')
 gh --repo $CURRENT_REPO --pattern "$DOWNLOADED_FILE" release download $CURRENT_VERSION
 sudo dpkg -i $DOWNLOADED_FILE
+rm -f $DOWNLOADED_FILE
+
+## Install tiny-go (`wkg`)
+CURRENT_REPO="bytecodealliance/wasm-pkg-tools"
+CURRENT_VERSION=$(gh --repo $CURRENT_REPO release view --json tagName --jq .tagName)
+DOWNLOADED_FILE=$(gh --repo $CURRENT_REPO release view --json assets --jq '.assets[] | select(.name | contains("x86_64") and  contains("linux") and endswith("gnu")) .name')
+gh --repo $CURRENT_REPO --pattern "$DOWNLOADED_FILE" release download $CURRENT_VERSION
+mv $DOWNLOADED_FILE wkg
+chmod +x wkg
+
+## Install tiny-go (`tiny-go`)
+CURRENT_REPO="tinygo-org/tinygo"
+CURRENT_VERSION=$(gh --repo $CURRENT_REPO release view --json tagName --jq .tagName)
+DOWNLOADED_FILE=$(gh --repo $CURRENT_REPO release view --json assets --jq '.assets[] | select(.name | contains("amd64") and endswith(".deb")) .name')
+gh --repo $CURRENT_REPO --pattern "$DOWNLOADED_FILE" release download $CURRENT_VERSION
+sudo dpkg -i $DOWNLOADED_FILE
+rm -f $DOWNLOADED_FILE
+
+## Install go-modules (`wit-bindgen-go`)
+CURRENT_REPO="bytecodealliance/go-modules"
+CURRENT_VERSION=$(gh --repo $CURRENT_REPO release view --json tagName --jq .tagName)
+DOWNLOADED_FILE=$(gh --repo $CURRENT_REPO release view --json assets --jq '.assets[] | select(.name | contains("linux") and contains("amd64") and endswith(".tgz")) .name')
+gh --repo $CURRENT_REPO --pattern "$DOWNLOADED_FILE" release download $CURRENT_VERSION
+tar -xvf $DOWNLOADED_FILE
 rm -f $DOWNLOADED_FILE
 
 ## Install cargo-component (`cargo-component`)
