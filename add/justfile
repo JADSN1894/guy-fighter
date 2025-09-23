@@ -1,5 +1,0 @@
-gen-plugin:
-	wkg wit build
-	go tool wit-bindgen-go generate --world adder --out internal ./docs:adder@0.1.0.wasm
-	tinygo build -target=wasip2 -o adder.wasm --wit-package docs:adder@0.1.0.wasm --wit-world adder main.go
-	

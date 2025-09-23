@@ -47,3 +47,12 @@ $ make run
 ```
 
 This builds the host application, C and JS plugins, and runs Guy Fighter.
+
+
+## Issues
+
+### Go
+
+[**Go Component WIT World Limitations - TinyGo Hardcoded to wasi:cli/command**](https://github.com/pulseengine/rules_wasm_component/issues/80)
+[**Allow compiling Wasm components with worlds besides wasi:cli/command**](https://github.com/tinygo-org/tinygo/issues/4843)
+[**Allow implementing different WIT worlds in wasip2 target**](https://github.com/tinygo-org/tinygo/pull/4934)

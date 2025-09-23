@@ -124,7 +124,7 @@ fn print_guy_card(guy: &TypeOfGuy, plugin_name: &str) {
 
 fn print_guy_types_header() {
     println!("\n{}", "═".repeat(57));
-    println!("{}", "🥊 FIGHTER ROSTER 🥊");
+    println!("🥊 FIGHTER ROSTER 🥊");
     println!("{}", "═".repeat(57));
 }
 
@@ -140,7 +140,7 @@ pub fn print_guy_types(state: &GameState) {
     for (plugin_id, guy) in state.invented_types_of_guy.borrow().iter() {
         let plugin_name = state
             .plugin_descs
-            .get(&plugin_id)
+            .get(plugin_id)
             .map_or("unknown plugin", |desc| desc.name.as_str());
         print_guy_card(guy, plugin_name);
     }
@@ -275,6 +275,6 @@ pub fn print_winner(winner_name: &str) {
         "🎉🏆🎉 {} WINS THE FIGHT! 🎉🏆🎉",
         winner_name.to_uppercase()
     );
-    println!("");
+    println!();
     println!("{}", "═".repeat(50));
 }

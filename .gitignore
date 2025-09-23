@@ -4,6 +4,10 @@ wkg.lock
 wit/deps
 wit/deps.lock
 
+go-plugin/internal
+go-plugin/go.sum
+go-plugin/*.wasm
+
 plugins
 
 js-plugin/build/*

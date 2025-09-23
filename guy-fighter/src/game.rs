@@ -181,7 +181,7 @@ fn select_random_guy_type(state: &GameState) -> TypeOfGuy {
     let total_count = builtin_count + invented_count;
 
     // Generate a single random index for all types
-    let idx = rng.gen_range(0..total_count);
+    let idx = rng.random_range(0..total_count);
 
     if idx < builtin_count {
         // Select from builtin types
@@ -198,8 +198,8 @@ fn roll_attribute_contest(attr1: u8, attr2: u8) -> (bool, u32, u32) {
     let mut rng = rand::rng();
 
     loop {
-        let roll1 = rng.gen_range(1..=DICE_SIDES) + attr1 as u32;
-        let roll2 = rng.gen_range(1..=DICE_SIDES) + attr2 as u32;
+        let roll1 = rng.random_range(1..=DICE_SIDES) + attr1 as u32;
+        let roll2 = rng.random_range(1..=DICE_SIDES) + attr2 as u32;
 
         if roll1 != roll2 {
             return (roll1 > roll2, roll1, roll2);
@@ -220,7 +220,7 @@ fn fight_round(guy1: &Guy, guy2: &Guy, round: u8) -> bool {
     let mut rng = rand::rng();
 
     // Randomly select which attribute to contest
-    let contest_type = rng.gen_range(0..3);
+    let contest_type = rng.random_range(0..3);
     let (attr1, attr2, contest_type) = match contest_type {
         0 => (
             guy1.guy_type.strength,
