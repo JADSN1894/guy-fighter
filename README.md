@@ -53,6 +53,12 @@ This builds the host application, C and JS plugins, and runs Guy Fighter.
 
 ### Go
 
-[**Go Component WIT World Limitations - TinyGo Hardcoded to wasi:cli/command**](https://github.com/pulseengine/rules_wasm_component/issues/80)
-[**Allow compiling Wasm components with worlds besides wasi:cli/command**](https://github.com/tinygo-org/tinygo/issues/4843)
-[**Allow implementing different WIT worlds in wasip2 target**](https://github.com/tinygo-org/tinygo/pull/4934)
+1. [**Go Component WIT World Limitations - TinyGo Hardcoded to wasi:cli/command**](https://github.com/pulseengine/rules_wasm_component/issues/80)
+1. [**Allow compiling Wasm components with worlds besides wasi:cli/command**](https://github.com/tinygo-org/tinygo/issues/4843)
+1. [**Allow implementing different WIT worlds in wasip2 target**](https://github.com/tinygo-org/tinygo/pull/4934)
+
+
+### Zig
+
+1. [**doink**](https://github.com/macovedj/doink/tree/main)
+1. [**WebAssembly with Zig, Part 1**](https://dev.to/sleibrock/webassembly-with-zig-part-1-4onm)

@@ -8,6 +8,11 @@ go-plugin/internal
 go-plugin/go.sum
 go-plugin/*.wasm
 
+zig-plugin/*.wasm
+zig-plugin/*.a
+zig-plugin/wit/deps
+zig-plugin/wit/deps.lock
+
 plugins
 
 js-plugin/build/*

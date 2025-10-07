@@ -1,6 +1,9 @@
 .PHONY: all run
 
-all: guy-fighter gen-go-plugin c-plugin js-plugin rust-plugin
+all: guy-fighter zig-plugin gen-go-plugin c-plugin js-plugin rust-plugin
+
+gen-zig-plugin:
+	$(MAKE) -C zig-plugin
 
 gen-go-plugin:
 	$(MAKE) -C go-plugin tinygo-plugin
