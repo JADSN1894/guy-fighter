@@ -4,7 +4,7 @@ version.workspace = true
 edition.workspace = true
 
 [dependencies]
-wit-bindgen = { version = "0.46.0", default-features = false, features = ["macros"]}
+wit-bindgen = { version = "0.47.0", default-features = false, features = ["macros"]}
 wit-bindgen-rt = { version = "0.44.0", default-features = false, features = ["bitflags"] }
 
 [lib]
