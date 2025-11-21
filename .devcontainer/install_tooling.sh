@@ -13,33 +13,10 @@ npm install -g @bytecodealliance/jco @bytecodealliance/componentize-js @bytecode
 mkdir -p $HOME/.local/bin
 cd $HOME/.local/bin
 
-echo "🔐 Setting up GitHub CLI authentication..."
-
-# Check if GITHUB_TOKEN is set
-if [ -z "$GITHUB_TOKEN" ]; then
-  echo "❌ GITHUB_TOKEN is not set. Please add it to .devcontainer/.env"
-  exit 1
+if [ X"${GH_TOKEN}" = X"" ];then 
+    read -p "Paste here your Github personal access token: " GH_TOKEN
+    export GH_TOKEN
 fi
-
-# Create gh config directory
-mkdir -p ~/.config/gh
-
-# 👇 CRITICAL: Temporarily clear GITHUB_TOKEN so gh doesn't complain
-# Save it to a temp var, then unset
-TEMP_GITHUB_TOKEN="$GITHUB_TOKEN"
-unset GITHUB_TOKEN
-
-# Authenticate gh cli using token (non-interactive)
-echo "$TEMP_GITHUB_TOKEN" | gh auth login --with-token
-
-# Optional: Restore GITHUB_TOKEN if needed later in script
-export GITHUB_TOKEN="$TEMP_GITHUB_TOKEN"
-
-echo "✅ GitHub CLI authenticated successfully."
-
-# Optional: Show current auth status
-gh auth status
-
 
 ## Install Just (`just`)
 CURRENT_REPO="casey/just"
