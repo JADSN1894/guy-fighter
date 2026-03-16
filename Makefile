@@ -14,6 +14,13 @@ guy-fighter-install/bin/guy-fighter: guy-fighter/src/main.rs guy-fighter/src/gam
 
 guy-fighter: guy-fighter-install/bin/guy-fighter
 
+fmt:
+	cargo fmt --all
+	cargo fmt --all -- --check
+
+clippy:
+	cargo clippy --all-features --all-targets -- -D warnings
+
 run: all
 	rm -rfv ./wit/deps ./deps/deps.lock
 	wit-deps
